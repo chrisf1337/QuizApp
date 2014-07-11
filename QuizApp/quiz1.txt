@@ -1,0 +1,5 @@
+Question: What is the best choice (hint: best starts with 'b')?
+A. This is the text for choice A
+B. This is the text for choice B
+C. This is the text for choice C
+Answer: B
