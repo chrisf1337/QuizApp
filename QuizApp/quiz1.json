@@ -1,0 +1,14 @@
+{
+    "quizItems": [
+        {
+            "question": "What is the correct answer (B)?",
+            "choices": ["Apple", "Bear", "Camera", "Dog"],
+            "answer": 1
+        },
+        {
+            "question": "What is the correct answer (A)?",
+            "choices": ["Aviation", "Balloon", "Cow", "Desk"],
+            "answer": 0
+        }
+    ]
+}

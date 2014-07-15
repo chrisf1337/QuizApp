@@ -14,7 +14,7 @@
 		393A3BA7196E3D9D00FBDFD8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3BA6196E3D9D00FBDFD8 /* main.m */; };
 		393A3BAB196E3D9D00FBDFD8 /* CFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3BAA196E3D9D00FBDFD8 /* CFAppDelegate.m */; };
 		393A3BAE196E3D9D00FBDFD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393A3BAC196E3D9D00FBDFD8 /* Main.storyboard */; };
-		393A3BB1196E3D9D00FBDFD8 /* CFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3BB0196E3D9D00FBDFD8 /* CFViewController.m */; };
+		393A3BB1196E3D9D00FBDFD8 /* CFQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3BB0196E3D9D00FBDFD8 /* CFQuizViewController.m */; };
 		393A3BB3196E3D9D00FBDFD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393A3BB2196E3D9D00FBDFD8 /* Images.xcassets */; };
 		393A3BBA196E3D9D00FBDFD8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A3BB9196E3D9D00FBDFD8 /* XCTest.framework */; };
 		393A3BBB196E3D9D00FBDFD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A3B9A196E3D9D00FBDFD8 /* Foundation.framework */; };
@@ -22,8 +22,9 @@
 		393A3BC4196E3D9D00FBDFD8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 393A3BC2196E3D9D00FBDFD8 /* InfoPlist.strings */; };
 		393A3BC6196E3D9D00FBDFD8 /* QuizAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3BC5196E3D9D00FBDFD8 /* QuizAppTests.m */; };
 		393A3C49196FD9BF00FBDFD8 /* quiz1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 393A3C48196FD9BF00FBDFD8 /* quiz1.txt */; };
-		393A3C4C196FDAF300FBDFD8 /* CFQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3C4B196FDAF300FBDFD8 /* CFQuizItem.m */; };
 		393A3C4F1970668D00FBDFD8 /* CFQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3C4E1970668D00FBDFD8 /* CFQuiz.m */; };
+		393A3C511970B01400FBDFD8 /* quiz1.json in Resources */ = {isa = PBXBuildFile; fileRef = 393A3C501970B01400FBDFD8 /* quiz1.json */; };
+		39E1EF7D1975B41B002505B9 /* CFResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E1EF7C1975B41B002505B9 /* CFResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +49,8 @@
 		393A3BA9196E3D9D00FBDFD8 /* CFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFAppDelegate.h; sourceTree = "<group>"; };
 		393A3BAA196E3D9D00FBDFD8 /* CFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFAppDelegate.m; sourceTree = "<group>"; };
 		393A3BAD196E3D9D00FBDFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		393A3BAF196E3D9D00FBDFD8 /* CFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFViewController.h; sourceTree = "<group>"; };
-		393A3BB0196E3D9D00FBDFD8 /* CFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFViewController.m; sourceTree = "<group>"; };
+		393A3BAF196E3D9D00FBDFD8 /* CFQuizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFQuizViewController.h; sourceTree = "<group>"; };
+		393A3BB0196E3D9D00FBDFD8 /* CFQuizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFQuizViewController.m; sourceTree = "<group>"; };
 		393A3BB2196E3D9D00FBDFD8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		393A3BB8196E3D9D00FBDFD8 /* QuizAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		393A3BB9196E3D9D00FBDFD8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,10 +58,11 @@
 		393A3BC3196E3D9D00FBDFD8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		393A3BC5196E3D9D00FBDFD8 /* QuizAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizAppTests.m; sourceTree = "<group>"; };
 		393A3C48196FD9BF00FBDFD8 /* quiz1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = quiz1.txt; sourceTree = "<group>"; };
-		393A3C4A196FDAF300FBDFD8 /* CFQuizItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFQuizItem.h; sourceTree = "<group>"; };
-		393A3C4B196FDAF300FBDFD8 /* CFQuizItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFQuizItem.m; sourceTree = "<group>"; };
 		393A3C4D1970668C00FBDFD8 /* CFQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFQuiz.h; sourceTree = "<group>"; };
 		393A3C4E1970668D00FBDFD8 /* CFQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFQuiz.m; sourceTree = "<group>"; };
+		393A3C501970B01400FBDFD8 /* quiz1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quiz1.json; sourceTree = "<group>"; };
+		39E1EF7B1975B41B002505B9 /* CFResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFResultsViewController.h; sourceTree = "<group>"; };
+		39E1EF7C1975B41B002505B9 /* CFResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,16 +122,17 @@
 		393A3BA0196E3D9D00FBDFD8 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				393A3C501970B01400FBDFD8 /* quiz1.json */,
 				393A3C48196FD9BF00FBDFD8 /* quiz1.txt */,
 				393A3BA9196E3D9D00FBDFD8 /* CFAppDelegate.h */,
 				393A3BAA196E3D9D00FBDFD8 /* CFAppDelegate.m */,
-				393A3C4A196FDAF300FBDFD8 /* CFQuizItem.h */,
-				393A3C4B196FDAF300FBDFD8 /* CFQuizItem.m */,
 				393A3C4D1970668C00FBDFD8 /* CFQuiz.h */,
 				393A3C4E1970668D00FBDFD8 /* CFQuiz.m */,
 				393A3BAC196E3D9D00FBDFD8 /* Main.storyboard */,
-				393A3BAF196E3D9D00FBDFD8 /* CFViewController.h */,
-				393A3BB0196E3D9D00FBDFD8 /* CFViewController.m */,
+				39E1EF7B1975B41B002505B9 /* CFResultsViewController.h */,
+				39E1EF7C1975B41B002505B9 /* CFResultsViewController.m */,
+				393A3BAF196E3D9D00FBDFD8 /* CFQuizViewController.h */,
+				393A3BB0196E3D9D00FBDFD8 /* CFQuizViewController.m */,
 				393A3BB2196E3D9D00FBDFD8 /* Images.xcassets */,
 				393A3BA1196E3D9D00FBDFD8 /* Supporting Files */,
 			);
@@ -245,6 +248,7 @@
 				393A3BB3196E3D9D00FBDFD8 /* Images.xcassets in Resources */,
 				393A3C49196FD9BF00FBDFD8 /* quiz1.txt in Resources */,
 				393A3BA5196E3D9D00FBDFD8 /* InfoPlist.strings in Resources */,
+				393A3C511970B01400FBDFD8 /* quiz1.json in Resources */,
 				393A3BAE196E3D9D00FBDFD8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393A3C4C196FDAF300FBDFD8 /* CFQuizItem.m in Sources */,
 				393A3BA7196E3D9D00FBDFD8 /* main.m in Sources */,
 				393A3C4F1970668D00FBDFD8 /* CFQuiz.m in Sources */,
 				393A3BAB196E3D9D00FBDFD8 /* CFAppDelegate.m in Sources */,
-				393A3BB1196E3D9D00FBDFD8 /* CFViewController.m in Sources */,
+				39E1EF7D1975B41B002505B9 /* CFResultsViewController.m in Sources */,
+				393A3BB1196E3D9D00FBDFD8 /* CFQuizViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +477,7 @@
 				393A3BCB196E3D9E00FBDFD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		393A3BCC196E3D9E00FBDFD8 /* Build configuration list for PBXNativeTarget "QuizAppTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +486,7 @@
 				393A3BCE196E3D9E00FBDFD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

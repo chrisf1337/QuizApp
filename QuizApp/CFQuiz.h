@@ -10,4 +10,20 @@
 
 @interface CFQuiz : NSObject
 
+@property (nonatomic) NSMutableArray *quizItems;
+@property (nonatomic) NSMutableArray *userAnswers;
+@property (nonatomic) NSString *path;
+@property (nonatomic) int currentIndex;
+
+- (instancetype)initWithPath:(NSString *)path;
+
+- (void)addAnswer:(int)answer atIndex:(int)index;
+- (void)addAnswer:(int)answer;
+- (NSDictionary *)currentQuizItem;
+- (NSString *)currentQuestion;
+- (NSArray *)currentChoices;
+- (int)currentAnswer;
+- (int)itemCount;
+- (void)pickChoice:(int)choice;
+
 @end
