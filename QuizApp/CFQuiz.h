@@ -13,6 +13,8 @@
 @property (nonatomic) NSMutableArray *quizItems;
 @property (nonatomic) NSMutableArray *userAnswers;
 @property (nonatomic) NSString *path;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *quizDescription;
 @property (nonatomic) int currentIndex;
 @property (nonatomic) BOOL finished;
 

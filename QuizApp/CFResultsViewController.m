@@ -43,7 +43,7 @@
         }
     }
     [self.lblResults setText:
-     [NSString stringWithFormat:@"Correct: %d\nTotal: %d\nPercent correct: %.2f\n\nTapping \"Back\" will restart the quiz.",
+     [NSString stringWithFormat:@"Correct: %d\nTotal: %d\nPercent correct: %.2f\n\nGoing back will restart the quiz.",
       correct,
       self.quiz.quizItems.count,
       (correct + 0.0) / self.quiz.quizItems.count * 100]];

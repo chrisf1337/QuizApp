@@ -22,12 +22,13 @@
     [_buttons addObjectsFromArray:[NSArray arrayWithObjects:self.btnAnswerA,
                                        self.btnAnswerB, self.btnAnswerC,
                                        self.btnAnswerD, self.btnAnswerE, nil]];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"quiz1" ofType:@"json"];
-    _quiz = [[CFQuiz alloc] initWithPath:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"quiz1" ofType:@"json"];
+//    _path = path;
+//    _quiz = [[CFQuiz alloc] initWithPath:path];
     _selectedChoice = -1;
     _position.text = [NSString stringWithFormat:@"%d/%d", _quiz.currentIndex + 1, _quiz.itemCount];
     [self showQuestionAtIndex:0];
-    self.navigationItem.title = @"Quiz";
+//    self.navigationItem.title = @"Quiz";
     NSLog(@"%f, %f", self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
 //    self.scrollView.backgroundColor = [UIColor cyanColor];
 //    self.contentHolder.backgroundColor = [UIColor cyanColor];
@@ -36,6 +37,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    self.navigationItem.title = self.quiz.name;
     if(self.quiz.finished)
     {
         for(int i = 0; i < self.quiz.userAnswers.count; i++)

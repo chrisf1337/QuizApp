@@ -1,5 +1,8 @@
 {
-    "quizItems": [
+    "key": "Quiz",
+    "name": "Quiz 1",
+    "description": "A simple quiz",
+    "items": [
         {
             "question": "What is the correct answer (B)?",
             "choices": ["Apple", "Bear", "Camera", "Dog"],

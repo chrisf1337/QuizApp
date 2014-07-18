@@ -25,6 +25,9 @@
 		393A3C49196FD9BF00FBDFD8 /* quiz1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 393A3C48196FD9BF00FBDFD8 /* quiz1.txt */; };
 		393A3C4F1970668D00FBDFD8 /* CFQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3C4E1970668D00FBDFD8 /* CFQuiz.m */; };
 		393A3C511970B01400FBDFD8 /* quiz1.json in Resources */ = {isa = PBXBuildFile; fileRef = 393A3C501970B01400FBDFD8 /* quiz1.json */; };
+		393F526C1978F65200B47895 /* CFQuizSelectorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393F526B1978F65200B47895 /* CFQuizSelectorTableViewController.m */; };
+		393F526E1979081100B47895 /* quizMenu.json in Resources */ = {isa = PBXBuildFile; fileRef = 393F526D1979081100B47895 /* quizMenu.json */; };
+		393F52701979084F00B47895 /* quiz2.json in Resources */ = {isa = PBXBuildFile; fileRef = 393F526F1979084F00B47895 /* quiz2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,10 @@
 		393A3C4D1970668C00FBDFD8 /* CFQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFQuiz.h; sourceTree = "<group>"; };
 		393A3C4E1970668D00FBDFD8 /* CFQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFQuiz.m; sourceTree = "<group>"; };
 		393A3C501970B01400FBDFD8 /* quiz1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quiz1.json; sourceTree = "<group>"; };
+		393F526A1978F65200B47895 /* CFQuizSelectorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFQuizSelectorTableViewController.h; sourceTree = "<group>"; };
+		393F526B1978F65200B47895 /* CFQuizSelectorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFQuizSelectorTableViewController.m; sourceTree = "<group>"; };
+		393F526D1979081100B47895 /* quizMenu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizMenu.json; sourceTree = "<group>"; };
+		393F526F1979084F00B47895 /* quiz2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quiz2.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,13 +129,17 @@
 		393A3BA0196E3D9D00FBDFD8 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				393F526D1979081100B47895 /* quizMenu.json */,
 				393A3C501970B01400FBDFD8 /* quiz1.json */,
+				393F526F1979084F00B47895 /* quiz2.json */,
 				393A3C48196FD9BF00FBDFD8 /* quiz1.txt */,
 				393A3BA9196E3D9D00FBDFD8 /* CFAppDelegate.h */,
 				393A3BAA196E3D9D00FBDFD8 /* CFAppDelegate.m */,
 				393A3C4D1970668C00FBDFD8 /* CFQuiz.h */,
 				393A3C4E1970668D00FBDFD8 /* CFQuiz.m */,
 				393A3BAC196E3D9D00FBDFD8 /* Main.storyboard */,
+				393F526A1978F65200B47895 /* CFQuizSelectorTableViewController.h */,
+				393F526B1978F65200B47895 /* CFQuizSelectorTableViewController.m */,
 				391D3BE21977644A00FA088C /* CFResultsViewController.h */,
 				391D3BE31977644A00FA088C /* CFResultsViewController.m */,
 				393A3BAF196E3D9D00FBDFD8 /* CFQuizViewController.h */,
@@ -248,6 +259,8 @@
 				393A3BB3196E3D9D00FBDFD8 /* Images.xcassets in Resources */,
 				393A3C49196FD9BF00FBDFD8 /* quiz1.txt in Resources */,
 				393A3BA5196E3D9D00FBDFD8 /* InfoPlist.strings in Resources */,
+				393F52701979084F00B47895 /* quiz2.json in Resources */,
+				393F526E1979081100B47895 /* quizMenu.json in Resources */,
 				393A3C511970B01400FBDFD8 /* quiz1.json in Resources */,
 				393A3BAE196E3D9D00FBDFD8 /* Main.storyboard in Resources */,
 			);
@@ -270,6 +283,7 @@
 			files = (
 				393A3BA7196E3D9D00FBDFD8 /* main.m in Sources */,
 				393A3C4F1970668D00FBDFD8 /* CFQuiz.m in Sources */,
+				393F526C1978F65200B47895 /* CFQuizSelectorTableViewController.m in Sources */,
 				393A3BAB196E3D9D00FBDFD8 /* CFAppDelegate.m in Sources */,
 				391D3BE41977644A00FA088C /* CFResultsViewController.m in Sources */,
 				393A3BB1196E3D9D00FBDFD8 /* CFQuizViewController.m in Sources */,

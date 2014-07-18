@@ -36,6 +36,7 @@
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, weak) IBOutlet UIView *contentHolder;
 
+//@property (nonatomic) NSString *path;
 @property (nonatomic) CFQuiz *quiz;
 
 @property (nonatomic) int selectedChoice;

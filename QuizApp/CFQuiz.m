@@ -21,7 +21,9 @@
                               [fileContents dataUsingEncoding:NSUTF8StringEncoding]
                                                              options:kNilOptions
                                                                error:&error];
-        _quizItems = [json objectForKey:@"quizItems"];
+        _quizItems = [json objectForKey:@"items"];
+        _name = [json objectForKey:@"name"];
+        _quizDescription = [json objectForKey:@"description"];
         _path = path;
         _currentIndex = 0;
         NSLog(@"_quizItems.count: %d", _quizItems.count);
