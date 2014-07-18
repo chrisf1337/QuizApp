@@ -30,6 +30,7 @@
         {
             [_userAnswers addObject:[NSNumber numberWithInt:-1]];
         }
+        _finished = NO;
         NSLog(@"_userAnswers.count: %d", _userAnswers.count);
     }
     return self;

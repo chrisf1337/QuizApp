@@ -14,6 +14,7 @@
 @property (nonatomic) NSMutableArray *userAnswers;
 @property (nonatomic) NSString *path;
 @property (nonatomic) int currentIndex;
+@property (nonatomic) BOOL finished;
 
 - (instancetype)initWithPath:(NSString *)path;
 
@@ -25,5 +26,6 @@
 - (int)currentAnswer;
 - (int)itemCount;
 - (void)pickChoice:(int)choice;
+- (NSString *)description;
 
 @end

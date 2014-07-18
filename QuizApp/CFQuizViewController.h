@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CFQuiz.h"
+#import "CFResultsViewController.h"
 
 @interface CFQuizViewController : UIViewController
 
@@ -31,6 +32,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *btnNext;
 
 @property (nonatomic, weak) IBOutlet UILabel *position;
+
+@property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIView *contentHolder;
 
 @property (nonatomic) CFQuiz *quiz;
 

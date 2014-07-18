@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391D3BE41977644A00FA088C /* CFResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391D3BE31977644A00FA088C /* CFResultsViewController.m */; };
 		393A3B9B196E3D9D00FBDFD8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A3B9A196E3D9D00FBDFD8 /* Foundation.framework */; };
 		393A3B9D196E3D9D00FBDFD8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A3B9C196E3D9D00FBDFD8 /* CoreGraphics.framework */; };
 		393A3B9F196E3D9D00FBDFD8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393A3B9E196E3D9D00FBDFD8 /* UIKit.framework */; };
@@ -24,7 +25,6 @@
 		393A3C49196FD9BF00FBDFD8 /* quiz1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 393A3C48196FD9BF00FBDFD8 /* quiz1.txt */; };
 		393A3C4F1970668D00FBDFD8 /* CFQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 393A3C4E1970668D00FBDFD8 /* CFQuiz.m */; };
 		393A3C511970B01400FBDFD8 /* quiz1.json in Resources */ = {isa = PBXBuildFile; fileRef = 393A3C501970B01400FBDFD8 /* quiz1.json */; };
-		39E1EF7D1975B41B002505B9 /* CFResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E1EF7C1975B41B002505B9 /* CFResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		391D3BE21977644A00FA088C /* CFResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFResultsViewController.h; sourceTree = "<group>"; };
+		391D3BE31977644A00FA088C /* CFResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFResultsViewController.m; sourceTree = "<group>"; };
 		393A3B97196E3D9D00FBDFD8 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		393A3B9A196E3D9D00FBDFD8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		393A3B9C196E3D9D00FBDFD8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,8 +63,6 @@
 		393A3C4D1970668C00FBDFD8 /* CFQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFQuiz.h; sourceTree = "<group>"; };
 		393A3C4E1970668D00FBDFD8 /* CFQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFQuiz.m; sourceTree = "<group>"; };
 		393A3C501970B01400FBDFD8 /* quiz1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quiz1.json; sourceTree = "<group>"; };
-		39E1EF7B1975B41B002505B9 /* CFResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFResultsViewController.h; sourceTree = "<group>"; };
-		39E1EF7C1975B41B002505B9 /* CFResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +129,8 @@
 				393A3C4D1970668C00FBDFD8 /* CFQuiz.h */,
 				393A3C4E1970668D00FBDFD8 /* CFQuiz.m */,
 				393A3BAC196E3D9D00FBDFD8 /* Main.storyboard */,
-				39E1EF7B1975B41B002505B9 /* CFResultsViewController.h */,
-				39E1EF7C1975B41B002505B9 /* CFResultsViewController.m */,
+				391D3BE21977644A00FA088C /* CFResultsViewController.h */,
+				391D3BE31977644A00FA088C /* CFResultsViewController.m */,
 				393A3BAF196E3D9D00FBDFD8 /* CFQuizViewController.h */,
 				393A3BB0196E3D9D00FBDFD8 /* CFQuizViewController.m */,
 				393A3BB2196E3D9D00FBDFD8 /* Images.xcassets */,
@@ -271,7 +271,7 @@
 				393A3BA7196E3D9D00FBDFD8 /* main.m in Sources */,
 				393A3C4F1970668D00FBDFD8 /* CFQuiz.m in Sources */,
 				393A3BAB196E3D9D00FBDFD8 /* CFAppDelegate.m in Sources */,
-				39E1EF7D1975B41B002505B9 /* CFResultsViewController.m in Sources */,
+				391D3BE41977644A00FA088C /* CFResultsViewController.m in Sources */,
 				393A3BB1196E3D9D00FBDFD8 /* CFQuizViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
