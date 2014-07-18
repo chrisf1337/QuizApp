@@ -10,7 +10,7 @@
 #import "CFQuiz.h"
 #import "CFQuizViewController.h"
 
-@interface CFQuizSelectorTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CFSelectorTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSMutableArray *quizzes;
 @property (nonatomic) CFQuiz *selectedQuiz;

@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="26"/>
+            <point key="canvasLocation" x="1061" y="414"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="Hwp-Fi-Ndg">
@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7tI-G2-oct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="26"/>
+            <point key="canvasLocation" x="1490" y="414"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UJP-O8-etY">
@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="97" y="26"/>
         </scene>
-        <!--Quiz Selector Table View Controller-->
+        <!--Selector Table View Controller-->
         <scene sceneID="YbZ-1y-uZR">
             <objects>
-                <tableViewController id="Vb0-ov-a3R" customClass="CFQuizSelectorTableViewController" sceneMemberID="viewController">
+                <tableViewController id="Vb0-ov-a3R" customClass="CFSelectorTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gxF-vO-yvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,7 +292,13 @@
                             <outlet property="delegate" destination="Vb0-ov-a3R" id="wY1-PB-Xq7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VA6-er-Gu8"/>
+                    <navigationItem key="navigationItem" id="VA6-er-Gu8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bFv-0V-8WC">
+                            <connections>
+                                <segue destination="hsm-cX-wSQ" kind="push" identifier="displayQuizFinder" id="FRx-Oj-isb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="displayQuizFromSelector" id="Yr1-Cb-vlC"/>
                     </connections>
@@ -300,6 +306,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdw-5p-dnR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="522" y="26"/>
+        </scene>
+        <!--Finder View Controller-->
+        <scene sceneID="RXF-5d-OtN">
+            <objects>
+                <viewController id="hsm-cX-wSQ" customClass="CFFinderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wEQ-uK-zNe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dit-1V-Kio"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n6j-CK-FJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quiz URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cAX-Dv-jcR">
+                                <rect key="frame" x="20" y="135" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hsm-cX-wSQ" id="Bng-Pd-f8C"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter quiz URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u32-u6-acS">
+                                <rect key="frame" x="20" y="106" width="116" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cAX-Dv-jcR" firstAttribute="top" secondItem="n6j-CK-FJ9" secondAttribute="top" constant="135" id="eoc-Te-Lhi"/>
+                            <constraint firstAttribute="trailing" secondItem="cAX-Dv-jcR" secondAttribute="trailing" constant="20" id="iHO-lA-C2l"/>
+                            <constraint firstItem="cAX-Dv-jcR" firstAttribute="leading" secondItem="n6j-CK-FJ9" secondAttribute="leading" constant="20" id="wyy-ms-frq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNN-We-KmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061" y="-273"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

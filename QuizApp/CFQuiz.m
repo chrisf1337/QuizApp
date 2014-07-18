@@ -16,9 +16,8 @@
     if(self)
     {
         NSError *error;
-        NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:
-                              [fileContents dataUsingEncoding:NSUTF8StringEncoding]
+        NSData *fileContents = [NSData dataWithContentsOfFile:path];
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileContents
                                                              options:kNilOptions
                                                                error:&error];
         _quizItems = [json objectForKey:@"items"];
@@ -26,14 +25,12 @@
         _quizDescription = [json objectForKey:@"description"];
         _path = path;
         _currentIndex = 0;
-        NSLog(@"_quizItems.count: %d", _quizItems.count);
         _userAnswers = [NSMutableArray arrayWithCapacity:_quizItems.count];
         for(int i = 0; i < _quizItems.count; i++)
         {
             [_userAnswers addObject:[NSNumber numberWithInt:-1]];
         }
         _finished = NO;
-        NSLog(@"_userAnswers.count: %d", _userAnswers.count);
     }
     return self;
 }

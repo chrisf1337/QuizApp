@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Christopher Fu. All rights reserved.
 //
 
-#import "CFQuizSelectorTableViewController.h"
+#import "CFSelectorTableViewController.h"
 
-@interface CFQuizSelectorTableViewController ()
+@interface CFSelectorTableViewController ()
 
 @end
 
-@implementation CFQuizSelectorTableViewController
+@implementation CFSelectorTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,25 +34,32 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     self.quizzes = [[NSMutableArray alloc] init];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"quizMenu" ofType:@"json"];
-    NSError *error;
-    NSString *fileContents = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:
-                          [fileContents dataUsingEncoding:NSUTF8StringEncoding]
-                                                         options:kNilOptions
-                                                           error:&error];
-    NSArray *quizFilenames = [json objectForKey:@"items"];
-    for(NSString *quizFilename in quizFilenames)
-    {
-        CFQuiz *quiz = [[CFQuiz alloc] initWithPath:[[NSBundle mainBundle] pathForResource:quizFilename ofType:@"json"]];
-        [self.quizzes addObject:quiz];
-    }
-    NSLog(@"%d", self.quizzes.count);
+
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.navigationItem.title = @"Quizzes";
+
+    [self.quizzes removeAllObjects];
+    NSString *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSError *error;
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"quizMenu.json"];
+    NSData *fileContents = [NSData dataWithContentsOfFile:path];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileContents
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSArray *quizFilenames = [json objectForKey:@"items"];
+    for(NSString *quizFilename in quizFilenames)
+    {
+        CFQuiz *quiz = [[CFQuiz alloc] initWithPath:
+                        [documentsDirectory
+                         stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.json", quizFilename]]];
+        [self.quizzes addObject:quiz];
+    }
+    NSLog(@"%d", self.quizzes.count);
+    [(UITableView *)self.view reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,7 +81,6 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    NSLog(@"%d", self.quizzes.count);
     return self.quizzes.count;
 }
 

@@ -13,10 +13,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    NSBundle *mainBundle = [NSBundle mainBundle];
-    NSString *file = [mainBundle pathForResource:@"quiz1" ofType:@"txt"];
-    NSLog(@"%@", mainBundle);
-    NSLog(@"%@", file);
+    NSString *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSError *error;
+    NSString *menuPath = [[NSBundle mainBundle] pathForResource:@"quizMenu" ofType:@"json"];
+    NSString *destPath = [documentsDirectory stringByAppendingPathComponent:@"quizMenu.json"];
+    NSData *fileContents = [NSData dataWithContentsOfFile:menuPath];
+    if(![[NSFileManager defaultManager] fileExistsAtPath:destPath])
+    {
+        [fileContents writeToFile:destPath atomically:YES];
+    }
+
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileContents
+                                                         options:kNilOptions
+                                                           error:&error];
+    NSArray *quizFilenames = [json objectForKey:@"items"];
+    for(NSString *quizFilename in quizFilenames)
+    {
+        NSString *quizPath = [[NSBundle mainBundle] pathForResource:quizFilename ofType:@"json"];
+        destPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.json", quizFilename]];
+        fileContents = [NSData dataWithContentsOfFile:quizPath];
+        [fileContents writeToFile:destPath atomically:YES];
+    }
     return YES;
 }
 							

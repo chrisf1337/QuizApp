@@ -29,7 +29,6 @@
     _position.text = [NSString stringWithFormat:@"%d/%d", _quiz.currentIndex + 1, _quiz.itemCount];
     [self showQuestionAtIndex:0];
 //    self.navigationItem.title = @"Quiz";
-    NSLog(@"%f, %f", self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
 //    self.scrollView.backgroundColor = [UIColor cyanColor];
 //    self.contentHolder.backgroundColor = [UIColor cyanColor];
 //    self.lblQuestion.textAlignment = NSTextAlignmentCenter;
@@ -69,7 +68,6 @@
     self.quiz.currentIndex = index;
     [self.lblQuestion setText:[self.quiz currentQuestion]];
 //    [self.lblQuestion sizeToFit];
-    NSLog(@"%f, %f", self.scrollView.contentSize.width, self.scrollView.contentSize.height);
     for(int i = 0; i < self.labels.count; i++)
     {
         [(UILabel *)self.labels[i] setHidden:NO];
