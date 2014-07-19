@@ -7,7 +7,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="CFQuizViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="quizVC_ID" id="vXZ-lx-hvc" customClass="CFQuizViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -53,7 +53,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-xo-raI">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="scrollV_ID" translatesAutoresizingMaskIntoConstraints="NO" id="FVf-xo-raI">
                                 <rect key="frame" x="0.0" y="186" width="320" height="382"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -207,7 +207,7 @@
         <!--Results View Controller-->
         <scene sceneID="Hwp-Fi-Ndg">
             <objects>
-                <viewController id="3oT-XI-a65" customClass="CFResultsViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="resultsVC_ID" id="3oT-XI-a65" customClass="CFResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IcA-Za-e4K"/>
                         <viewControllerLayoutGuide type="bottom" id="Vfq-uD-Zhx"/>
@@ -216,15 +216,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Of0-bG-ukk">
-                                <rect key="frame" x="20" y="128" width="280" height="202"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Of0-bG-ukk">
+                                <rect key="frame" x="20" y="82" width="280" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="ihE-a9-SSC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Of0-bG-ukk" firstAttribute="leading" secondItem="hYJ-RA-8Qj" secondAttribute="leading" constant="20" id="I1y-Hj-bCz"/>
+                            <constraint firstAttribute="trailing" secondItem="Of0-bG-ukk" secondAttribute="trailing" constant="20" id="KwV-ne-BN7"/>
+                            <constraint firstItem="Of0-bG-ukk" firstAttribute="top" secondItem="hYJ-RA-8Qj" secondAttribute="top" constant="82" id="cTY-Dw-z4l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jin-1t-KJr"/>
                     <connections>
@@ -238,7 +246,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UJP-O8-etY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oXb-DH-iOC" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="navigationC_ID" automaticallyAdjustsScrollViewInsets="NO" id="oXb-DH-iOC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9nJ-Op-29F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -256,7 +264,7 @@
         <!--Selector Table View Controller-->
         <scene sceneID="YbZ-1y-uZR">
             <objects>
-                <tableViewController id="Vb0-ov-a3R" customClass="CFSelectorTableViewController" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="selectorTVC_ID" id="Vb0-ov-a3R" customClass="CFSelectorTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gxF-vO-yvg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,7 +318,7 @@
         <!--Finder View Controller-->
         <scene sceneID="RXF-5d-OtN">
             <objects>
-                <viewController id="hsm-cX-wSQ" customClass="CFFinderViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="finderVC_ID" id="hsm-cX-wSQ" customClass="CFFinderViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wEQ-uK-zNe"/>
                         <viewControllerLayoutGuide type="bottom" id="Dit-1V-Kio"/>
@@ -319,8 +327,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quiz URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cAX-Dv-jcR">
-                                <rect key="frame" x="20" y="135" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="textF_ID" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quiz URL" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cAX-Dv-jcR">
+                                <rect key="frame" x="20" y="116" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
@@ -329,7 +337,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter quiz URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u32-u6-acS">
-                                <rect key="frame" x="20" y="106" width="116" height="21"/>
+                                <rect key="frame" x="20" y="87" width="116" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -338,7 +346,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cAX-Dv-jcR" firstAttribute="top" secondItem="n6j-CK-FJ9" secondAttribute="top" constant="135" id="eoc-Te-Lhi"/>
+                            <constraint firstItem="cAX-Dv-jcR" firstAttribute="top" secondItem="n6j-CK-FJ9" secondAttribute="top" constant="116" id="eoc-Te-Lhi"/>
                             <constraint firstAttribute="trailing" secondItem="cAX-Dv-jcR" secondAttribute="trailing" constant="20" id="iHO-lA-C2l"/>
                             <constraint firstItem="cAX-Dv-jcR" firstAttribute="leading" secondItem="n6j-CK-FJ9" secondAttribute="leading" constant="20" id="wyy-ms-frq"/>
                         </constraints>

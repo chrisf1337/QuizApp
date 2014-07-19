@@ -58,7 +58,6 @@
                          stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.json", quizFilename]]];
         [self.quizzes addObject:quiz];
     }
-    NSLog(@"%d", self.quizzes.count);
     [(UITableView *)self.view reloadData];
 }
 
@@ -87,16 +86,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"tableView:cellForRowAtIndexPath: called!");
-//    static NSString *simpleTableIdentifier = @"SimpleTableCell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-//    // Configure the cell...
-//    if(cell == nil)
-//    {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-//    }
-//    cell.textLabel.text = self.recipes[indexPath.row];
-//    return cell;
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quizCell"];
     CFQuiz *quiz = self.quizzes[indexPath.row];
     cell.textLabel.text = quiz.name;

@@ -35,6 +35,22 @@
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if(self)
+    {
+        _quizItems = [aDecoder decodeObjectForKey:@"quizItems"];
+        _userAnswers = [aDecoder decodeObjectForKey:@"userAnswers"];
+        _path = [aDecoder decodeObjectForKey:@"path"];
+        _name = [aDecoder decodeObjectForKey:@"name"];
+        _quizDescription = [aDecoder decodeObjectForKey:@"quizDescription"];
+        _currentIndex = [aDecoder decodeIntForKey:@"currentIndex"];
+        _finished = [aDecoder decodeBoolForKey:@"finished"];
+    }
+    return self;
+}
+
 - (void)addAnswer:(int)answer atIndex:(int)index
 {
     self.userAnswers[index] = [NSNumber numberWithInt:answer];
@@ -79,6 +95,17 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Quiz at %@ (%d questions)", self.path, [self.quizItems count]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.quizItems forKey:@"quizItems"];
+    [aCoder encodeObject:self.userAnswers forKey:@"userAnswers"];
+    [aCoder encodeObject:self.path forKey:@"path"];
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.quizDescription forKey:@"quizDescription"];
+    [aCoder encodeInt:self.currentIndex forKey:@"currentIndex"];
+    [aCoder encodeBool:self.finished forKey:@"finished"];
 }
 
 @end

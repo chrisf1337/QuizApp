@@ -7,6 +7,7 @@
 //
 
 #import "CFFinderViewController.h"
+#import "UIViewController+UIViewControllerAdditions.h"
 
 @interface CFFinderViewController ()
 
@@ -29,6 +30,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if(self.backViewController.navigationItem.title == nil)
+    {
+        self.backViewController.navigationItem.title = @"Quizzes";
+    }
 }
 
 - (void)didReceiveMemoryWarning

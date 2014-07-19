@@ -7,6 +7,13 @@
 //
 
 #import "CFQuizViewController.h"
+#import "UIViewController+UIViewControllerAdditions.h"
+
+@interface CFQuizViewController ()
+
+
+
+@end
 
 @implementation CFQuizViewController
 
@@ -22,16 +29,9 @@
     [_buttons addObjectsFromArray:[NSArray arrayWithObjects:self.btnAnswerA,
                                        self.btnAnswerB, self.btnAnswerC,
                                        self.btnAnswerD, self.btnAnswerE, nil]];
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"quiz1" ofType:@"json"];
-//    _path = path;
-//    _quiz = [[CFQuiz alloc] initWithPath:path];
     _selectedChoice = -1;
     _position.text = [NSString stringWithFormat:@"%d/%d", _quiz.currentIndex + 1, _quiz.itemCount];
-    [self showQuestionAtIndex:0];
-//    self.navigationItem.title = @"Quiz";
-//    self.scrollView.backgroundColor = [UIColor cyanColor];
-//    self.contentHolder.backgroundColor = [UIColor cyanColor];
-//    self.lblQuestion.textAlignment = NSTextAlignmentCenter;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -45,13 +45,28 @@
         }
         [self showQuestionAtIndex:0];
         [self.btnNext setTitle:@"Next" forState:UIControlStateNormal];
+        self.quiz.finished = NO;
+        self.selectedChoice = -1;
+    }
+    [self showQuestionAtIndex:self.quiz.currentIndex];
+    if(self.selectedChoice != -1)
+    {
+        [(UIButton *)self.buttons[self.selectedChoice] setSelected:YES];
+    }
+    if(self.quiz.currentIndex == self.quiz.quizItems.count - 1)
+    {
+        [self.btnNext setTitle:@"Finish" forState:UIControlStateNormal];
+        [self.btnNext sizeToFit];
+    }
+    if(self.backViewController.navigationItem.title == nil)
+    {
+        self.backViewController.navigationItem.title = @"Quizzes";
     }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-//    self.lblQuestion.backgroundColor = [UIColor blueColor];
-    self.scrollView.layer.borderColor = [UIColor orangeColor].CGColor;
+    self.scrollView.layer.borderColor = [UIColor blueColor].CGColor;
     self.scrollView.layer.borderWidth = 1.0f;
 }
 
@@ -206,10 +221,15 @@
 
 - (IBAction)pickedNext:(id)sender
 {
+    self.btnPrevious.hidden = NO;
     if(self.quiz.currentIndex == self.quiz.itemCount - 1)
     {
         [self.quiz addAnswer:self.selectedChoice atIndex:self.quiz.currentIndex];
         self.quiz.finished = YES;
+        if(self.selectedChoice != -1)
+        {
+            [(UIButton *)self.buttons[self.selectedChoice] setSelected:NO];
+        }
         [self performSegueWithIdentifier:@"displayResultsView" sender:self];
     }
     else
@@ -246,26 +266,18 @@
     }
 }
 
-//- (void)updateViewConstraints
-//{
-//    [super updateViewConstraints];
-////    UIView *view = self.contentHolder;
-////    [self.contentHolder addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(==200)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(view)]];
-//    UIView *view = self.lblAnswerC;
-//    [self.lblAnswerC addConstraint:[NSLayoutConstraint constraintWithItem:<#(id)#> attribute:<#(NSLayoutAttribute)#> relatedBy:<#(NSLayoutRelation)#> toItem:<#(id)#> attribute:<#(NSLayoutAttribute)#> multiplier:<#(CGFloat)#> constant:<#(CGFloat)#>]]
-//}
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super encodeRestorableStateWithCoder:coder];
+    [coder encodeObject:self.quiz forKey:@"quiz"];
+    [coder encodeInt:self.selectedChoice forKey:@"selectedChoice"];
+}
 
-//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-//{
-////    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-//    CGPoint lblAnswerAOrigin = [self.lblAnswerA convertPoint:self.lblAnswerA.bounds.origin toView:self.view];
-//    CGPoint scrollViewOrigin = [self.scrollView convertPoint:self.scrollView.bounds.origin toView:self.view];
-//    NSLog(@"scrollView origin: (%f, %f)", scrollViewOrigin.x, scrollViewOrigin.y);
-//    NSLog(@"lblAnswerA origin: (%f, %f)", lblAnswerAOrigin.x, lblAnswerAOrigin.y);
-//    CGFloat height = self.quiz.currentChoices.count * self.lblAnswerA.bounds.size.height + 40;
-////    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, height);
-//    NSLog(@"scrollView.contentSize: (%f, %f)", self.scrollView.contentSize.width, self.scrollView.contentSize.height);
-//
-//}
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super decodeRestorableStateWithCoder:coder];
+    self.quiz = [coder decodeObjectForKey:@"quiz"];
+    self.selectedChoice = [coder decodeIntForKey:@"selectedChoice"];
+}
 
 @end

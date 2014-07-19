@@ -7,6 +7,7 @@
 //
 
 #import "CFResultsViewController.h"
+#import "UIViewController+UIViewControllerAdditions.h"
 
 @interface CFResultsViewController ()
 
@@ -48,12 +49,30 @@
       self.quiz.quizItems.count,
       (correct + 0.0) / self.quiz.quizItems.count * 100]];
     [self.lblResults sizeToFit];
+    if(self.backViewController.navigationItem.title == nil)
+    {
+        self.backViewController.navigationItem.title = self.quiz.name;
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super encodeRestorableStateWithCoder:coder];
+    [coder encodeObject:self.quiz forKey:@"quiz"];
+    NSLog(@"encoding!");
+}
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [super decodeRestorableStateWithCoder:coder];
+    self.quiz = [coder decodeObjectForKey:@"quiz"];
+    NSLog(@"decoding!");
 }
 
 /*
