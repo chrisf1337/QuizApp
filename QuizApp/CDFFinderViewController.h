@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CFFinderViewController : UIViewController <UITextFieldDelegate>
+@interface CDFFinderViewController : UIViewController <UITextFieldDelegate>
 
 @end

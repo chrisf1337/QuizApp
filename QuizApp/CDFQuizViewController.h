@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CFQuiz.h"
-#import "CFResultsViewController.h"
+#import "CDFQuiz.h"
+#import "CDFResultsViewController.h"
 
-@interface CFQuizViewController : UIViewController
+@interface CDFQuizViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *lblQuestion;
 
@@ -37,7 +37,7 @@
 @property (nonatomic, weak) IBOutlet UIView *contentHolder;
 
 //@property (nonatomic) NSString *path;
-@property (nonatomic) CFQuiz *quiz;
+@property (nonatomic) CDFQuiz *quiz;
 
 @property (nonatomic) int selectedChoice;
 

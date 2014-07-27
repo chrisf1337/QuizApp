@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Christopher Fu. All rights reserved.
 //
 
-#import "CFAppDelegate.h"
+#import "CDFAppDelegate.h"
 
-@implementation CFAppDelegate
+@implementation CDFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -18,7 +18,7 @@
     NSString *menuPath = [[NSBundle mainBundle] pathForResource:@"quizMenu" ofType:@"json"];
     NSString *destPath = [documentsDirectory stringByAppendingPathComponent:@"quizMenu.json"];
     NSData *fileContents = [NSData dataWithContentsOfFile:menuPath];
-    if(![[NSFileManager defaultManager] fileExistsAtPath:destPath])
+    if (![[NSFileManager defaultManager] fileExistsAtPath:destPath])
     {
         [fileContents writeToFile:destPath atomically:YES];
     }
@@ -27,7 +27,7 @@
                                                          options:kNilOptions
                                                            error:&error];
     NSArray *quizFilenames = [json objectForKey:@"items"];
-    for(NSString *quizFilename in quizFilenames)
+    for (NSString *quizFilename in quizFilenames)
     {
         NSString *quizPath = [[NSBundle mainBundle] pathForResource:quizFilename ofType:@"json"];
         destPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.json", quizFilename]];

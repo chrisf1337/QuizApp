@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CFQuiz.h"
-#import "CFQuizViewController.h"
+#import "CDFQuiz.h"
+#import "CDFQuizViewController.h"
 
-@interface CFSelectorTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CDFSelectorTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSMutableArray *quizzes;
-@property (nonatomic) CFQuiz *selectedQuiz;
+@property (nonatomic) CDFQuiz *selectedQuiz;
 
 @end

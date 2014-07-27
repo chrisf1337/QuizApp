@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Christopher Fu. All rights reserved.
 //
 
-#import "CFResultsViewController.h"
+#import "CDFResultsViewController.h"
 #import "UIViewController+UIViewControllerAdditions.h"
 
-@interface CFResultsViewController ()
+@interface CDFResultsViewController ()
 
 @end
 
-@implementation CFResultsViewController
+@implementation CDFResultsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,9 +35,9 @@
 {
     self.navigationItem.title = @"Results";
     int correct = 0;
-    for(int i = 0; i < [self.quiz.quizItems count]; i++)
+    for (int i = 0; i < [self.quiz.quizItems count]; i++)
     {
-        if([(NSNumber *)[self.quiz.quizItems[i] objectForKey:@"answer"] intValue] ==
+        if ([(NSNumber *)[self.quiz.quizItems[i] objectForKey:@"answer"] intValue] ==
            [(NSNumber *)self.quiz.userAnswers[i] intValue])
         {
             correct++;
@@ -49,7 +49,7 @@
       self.quiz.quizItems.count,
       (correct + 0.0) / self.quiz.quizItems.count * 100]];
     [self.lblResults sizeToFit];
-    if(self.backViewController.navigationItem.title == nil)
+    if (self.backViewController.navigationItem.title == nil)
     {
         self.backViewController.navigationItem.title = self.quiz.name;
     }

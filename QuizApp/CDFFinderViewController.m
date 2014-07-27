@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Christopher Fu. All rights reserved.
 //
 
-#import "CFFinderViewController.h"
+#import "CDFFinderViewController.h"
 #import "UIViewController+UIViewControllerAdditions.h"
 
-@interface CFFinderViewController ()
+@interface CDFFinderViewController ()
 
 - (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
 
-@implementation CFFinderViewController
+@implementation CDFFinderViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +34,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if(self.backViewController.navigationItem.title == nil)
+    if (self.backViewController.navigationItem.title == nil)
     {
         self.backViewController.navigationItem.title = @"Quizzes";
     }
@@ -72,14 +72,14 @@
     [textField resignFirstResponder];
     NSError *error;
     NSString *urlString = textField.text;
-    if(![urlString hasPrefix:@"http"])
+    if (![urlString hasPrefix:@"http"])
     {
         urlString = [NSString stringWithFormat:@"http://%@", urlString];
     }
     NSURL *url = [NSURL URLWithString:urlString];
     textField.text = @"";
     NSData *fileContents = [NSData dataWithContentsOfURL:url];
-    if(fileContents == nil)
+    if (fileContents == nil)
     {
         [self showAlertWithTitle:@"Error" message:@"The URL you have entered is invalid."];
     }
@@ -88,7 +88,7 @@
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileContents
                                                              options:kNilOptions
                                                                error:&error];
-        if(json == nil)
+        if (json == nil)
         {
             [self showAlertWithTitle:@"Error" message:@"There is no JSON file at the URL you have entered."];
         }
@@ -109,7 +109,7 @@
                                                      error:&error];
             NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:json];
             NSMutableArray *menuItems = [NSMutableArray arrayWithArray:[dict objectForKey:@"items"]];
-            if(![menuItems containsObject:quizName])
+            if (![menuItems containsObject:quizName])
             {
                 [menuItems addObject:quizName];
             }

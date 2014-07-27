@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CFQuiz.h"
+#import "CDFQuiz.h"
 
-@interface CFResultsViewController : UIViewController
+@interface CDFResultsViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *lblResults;
-@property (nonatomic) CFQuiz *quiz;
+@property (nonatomic) CDFQuiz *quiz;
 
 @end

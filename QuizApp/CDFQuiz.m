@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Christopher Fu. All rights reserved.
 //
 
-#import "CFQuiz.h"
+#import "CDFQuiz.h"
 
-@implementation CFQuiz
+@implementation CDFQuiz
 
 - (instancetype)initWithPath:(NSString *)path
 {
     self = [super init];
-    if(self)
+    if (self)
     {
         NSError *error;
         NSData *fileContents = [NSData dataWithContentsOfFile:path];
@@ -26,7 +26,7 @@
         _path = path;
         _currentIndex = 0;
         _userAnswers = [NSMutableArray arrayWithCapacity:_quizItems.count];
-        for(int i = 0; i < _quizItems.count; i++)
+        for (int i = 0; i < _quizItems.count; i++)
         {
             [_userAnswers addObject:[NSNumber numberWithInt:-1]];
         }
@@ -38,7 +38,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
-    if(self)
+    if (self)
     {
         _quizItems = [aDecoder decodeObjectForKey:@"quizItems"];
         _userAnswers = [aDecoder decodeObjectForKey:@"userAnswers"];

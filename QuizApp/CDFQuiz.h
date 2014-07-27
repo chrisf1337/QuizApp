@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CFQuiz : NSObject <NSCoding>
+@interface CDFQuiz : NSObject <NSCoding>
 
 @property (nonatomic) NSMutableArray *quizItems;
 @property (nonatomic) NSMutableArray *userAnswers;

@@ -13,7 +13,7 @@
 - (UIViewController *)backViewController
 {
     NSInteger numberOfViewControllers = self.navigationController.viewControllers.count;
-    if(numberOfViewControllers < 2)
+    if (numberOfViewControllers < 2)
     {
         return nil;
     }

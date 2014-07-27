@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Christopher Fu. All rights reserved.
 //
 
-#import "CFSelectorTableViewController.h"
+#import "CDFSelectorTableViewController.h"
 
-@interface CFSelectorTableViewController ()
+@interface CDFSelectorTableViewController ()
 
 @end
 
-@implementation CFSelectorTableViewController
+@implementation CDFSelectorTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,9 +51,9 @@
                                                          options:kNilOptions
                                                            error:&error];
     NSArray *quizFilenames = [json objectForKey:@"items"];
-    for(NSString *quizFilename in quizFilenames)
+    for (NSString *quizFilename in quizFilenames)
     {
-        CFQuiz *quiz = [[CFQuiz alloc] initWithPath:
+        CDFQuiz *quiz = [[CDFQuiz alloc] initWithPath:
                         [documentsDirectory
                          stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.json", quizFilename]]];
         [self.quizzes addObject:quiz];
@@ -88,7 +88,7 @@
 {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quizCell"];
-    CFQuiz *quiz = self.quizzes[indexPath.row];
+    CDFQuiz *quiz = self.quizzes[indexPath.row];
     cell.textLabel.text = quiz.name;
     cell.detailTextLabel.text = quiz.quizDescription;
     return cell;
@@ -102,9 +102,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"displayQuizFromSelector"])
+    if ([segue.identifier isEqualToString:@"displayQuizFromSelector"])
     {
-        CFQuizViewController *quizViewController = (CFQuizViewController *)segue.destinationViewController;
+        CDFQuizViewController *quizViewController = (CDFQuizViewController *)segue.destinationViewController;
         [quizViewController setQuiz:self.selectedQuiz];
     }
 }
